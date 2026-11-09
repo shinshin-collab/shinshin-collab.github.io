@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>taskflower — WBS and Gantt chart on one screen, on your own server (one-time purchase)</title>
+<meta name="description" content="WBS and Gantt chart on one screen. Type like in Excel, and when you extend a task, the tasks after it move automatically. A one-time-purchase scheduling tool you run on your company server with Docker Compose. Every feature works on an internal network cut off from the internet.">
+<link rel="stylesheet" href="../style.css">
+<link rel="alternate" hreflang="ja" href="../index.html">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="index.html">■ taskflower</a>
+    <nav><a href="#features">Features</a><a href="#spec">Requirements</a><a href="#price">Price</a><a href="#faq">FAQ</a><a href="manual/index.html">Manual</a></nav>
+    <a class="lang" href="../index.html" hreflang="ja">日本語</a>
+    <a class="btn primary small" href="#trial">Free trial</a>
+  </div>
+</header>
+<div class="prelaunch"><div class="wrap">taskflower is scheduled to launch between December 2026 and January 2027. This page is a preview; purchase and download are not available yet. <a href="https://taskflowerwbs.gumroad.com">Get the launch announcement by email (Gumroad)</a></div></div>
+
+<section>
+  <div class="wrap hero">
+    <div>
+      <h1>WBS and Gantt chart on one screen.<br>Type like in Excel, change a date in one place.</h1>
+      <p class="lead">The WBS (a hierarchical list of tasks) sits next to the Gantt chart, which shows the schedule as bars. When you extend a task, the tasks after it move automatically. It runs on your own server, for a planned one-time price of ¥30,000.<br>Start it with <code>docker compose up -d</code>. Every feature works on an internal network cut off from the internet.</p>
+      <div class="tags"><span>Self-hosted</span><span>On-premises</span><span>Docker Compose</span><span>Fully offline</span><span>REST API</span><span>GitLab integration</span></div>
+      <a class="btn primary" href="#trial">About the free trial (after launch)</a>
+      <a class="btn" href="#spec">See the requirements</a>
+    </div>
+    <div>
+      <img class="shot" src="../img/hero.en.png" width="1280" height="720" alt="The taskflower screen. The WBS table is on the left and the Gantt chart on the right. Right after extending “Assemble the unit bath” to 4 days and pressing “Move” in the confirmation: the 6 tasks after it have moved 2 days later and are highlighted">
+      <p class="caption">Right after extending “Assemble the unit bath” by 2 days. Check the 6 tasks that will move and press “Move”: they move together, and the changed rows are highlighted.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Does this sound like your schedule?</h2>
+    <div class="grid g2">
+      <div class="card">Every time one task slips, you retype all the dates after it by hand</div>
+      <div class="card">The shared folder is full of Excel files, and nobody knows who changed what, or when</div>
+      <div class="card">You cannot use cloud tools because drawings and customer names must not leave the company</div>
+      <div class="card">The free open-source tools needed too much setup, and the people on site never used them</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>We could not find a schedule tool that was just right, so we made one.</h2>
+    <p class="lead">The expensive tools had far too many features and added up every month. The affordable ones put the WBS and the Gantt chart on separate screens, or made you enter tasks one by one in web forms. Excel is easy to type in, but every time a task slips you retype every date after it. And for each new site or project, typing the usual steps from scratch took time.</p>
+    <div class="grid g5">
+      <div class="card"><h3>WBS and Gantt chart on one screen</h3>The table and the Gantt chart sit side by side, and their rows line up.</div>
+      <div class="card"><h3>Type like in Excel</h3>Move between cells with the arrow keys and Tab, and just type. Keep entering without reaching for the mouse.</div>
+      <div class="card"><h3>Easy schedule changes</h3>Extend a task, and the tasks after it move automatically.</div>
+      <div class="card"><h3>Your usual steps as templates</h3>Register a fixed set of tasks such as “Bathroom remodel” or “Monthly closing”, then add them all at once just by picking a start date. Dates are calculated around days off.</div>
+      <div class="card"><h3>Stays on your own server</h3>Keep schedules full of customer names and site addresses out of the cloud. It runs on your server and never talks to the outside.</div>
+    </div>
+    <p class="lead">Since there was no such tool, we made one. A one-time-purchase schedule tool that is not too expensive and does not fall short.</p>
+  </div>
+</section>
+
+<section id="features" class="alt">
+  <div class="wrap">
+    <h2>What taskflower does</h2>
+    <div class="grid g3">
+      <div class="card"><h3>Enter data the way you do in Excel</h3>Move with the arrow keys and type. Enter to confirm, Ctrl+Enter to add a row, Alt+Shift+→ to indent. Paste several rows from Excel, and the levels come in from the leading spaces.</div>
+      <div class="card"><h3>Delays carry forward automatically</h3>Extend the plan of a task, and all the linked tasks after it move by the same number of working days. Weekends, holidays and company days off are skipped. Before they move, you can check the tasks and their new dates in a list.</div>
+      <div class="card">
+        <svg class="arch" width="220" height="90" viewBox="0 0 220 90" role="img" aria-label="One container runs on a server inside the internal network">
+          <rect x="1" y="1" width="218" height="88" rx="8" fill="#f5f7fa" stroke="#cbd2d9" stroke-dasharray="4 3"/>
+          <text x="10" y="18" font-size="11" fill="#616e7c">Internal network</text>
+          <rect x="20" y="30" width="80" height="44" rx="6" fill="#fff" stroke="#2563eb"/>
+          <text x="60" y="49" font-size="11" text-anchor="middle" fill="#1f2933">taskflower</text>
+          <text x="60" y="64" font-size="10" text-anchor="middle" fill="#616e7c">1 container</text>
+          <rect x="140" y="38" width="60" height="28" rx="6" fill="#fff" stroke="#cbd2d9"/>
+          <text x="170" y="56" font-size="11" text-anchor="middle" fill="#1f2933">Browser</text>
+          <line x1="100" y1="52" x2="140" y2="52" stroke="#616e7c"/>
+        </svg>
+        <h3>Stays on your own server</h3>It runs in a single container and never talks to the outside. No license check, no usage reporting.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>See it in action</h2>
+    <img class="shot" src="../img/cascade.en.gif" width="1280" height="720" loading="lazy" alt="Changing the days of a task from 2 to 4 and pressing Enter shows the 6 tasks that will move with their new dates; pressing Enter again (Move) moves the tasks after it 2 days later together, and the bars in the Gantt chart move">
+    <p class="caption">Change the days from 2 to 4 and press Enter. Check the 6 tasks and their dates, then press Enter again (Move): they move together. Ctrl+Z puts them back.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>For many kinds of work</h2>
+    <div class="grid g4">
+      <div class="card"><h3>Construction and remodeling</h3>Manage the schedule of each site. Put the schedules of subcontractors and tradespeople who do not track progress in your system on the same Gantt chart as external people, so the whole job is easy to see. Actuals can also be entered from a tablet.</div>
+      <div class="card"><h3>Sales and product planning</h3>Set trade shows and launch dates as milestones and manage the preparation backwards from them. Keep the usual steps as templates.</div>
+      <div class="card"><h3>Back office</h3>Keep yearly steps such as closing the books as templates, and list the tasks that are late.</div>
+      <div class="card"><h3>Software development</h3>Mark a task done when its GitLab issue is closed. Write progress from AI tools through the REST API.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Features</h2>
+    <div class="grid g2">
+      <div class="card"><h3>What it can do</h3>Linked WBS (8 levels) and Gantt chart / Automatic moves of successors / Plans and actuals, progress, milestones / My tasks and a tablet view / Earned value (EVM) and workload by assignee / Templates, CSV, pasting from Excel / Undo (100 steps) / 4 roles and external people / GitLab integration and REST API / Holidays (Japanese holidays for 2025–2027 are preset; the system administrator registers your own) / File attachments / Japanese and English screens</div>
+      <div class="card"><h3>What it cannot do</h3>SSO and Active Directory / Email notifications / Smartphones / Industry-specific report forms / Choosing a kind of link (such as “start-to-start”) / Use over the internet (designed for use inside the company; not covered by any guarantee)<br><span class="note">See the <a href="manual/What%20it%20cannot%20do.html">“What it cannot do”</a> page of the manual for details.</span></div>
+    </div>
+    <p style="margin-top:16px"><a class="btn" href="manual/index.html">Read the manual</a><span class="note">The same content as the manual included in the product. Features not in the manual do not exist in taskflower.</span></p>
+  </div>
+</section>
+
+<section id="spec" class="alt">
+  <div class="wrap">
+    <h2>Requirements and specifications (for your system administrator)</h2>
+    <table>
+      <tr><th style="width:22%">Architecture</th><td>A single Docker container. Database: SQLite (default), PostgreSQL or MySQL</td></tr>
+      <tr><th>Installation</th><td>Unzip the Zip for your server's CPU (amd64 / arm64) → <code>docker load -i image.tar.gz</code> → <code>cp .env.example .env</code> → <code>docker compose up -d</code></td></tr>
+      <tr><th>Platforms</th><td>Linux / Windows (WSL2 + Docker Desktop) / macOS. amd64 and arm64. Docker Engine 24 or later, Docker Compose v2.24 or later</td></tr>
+      <tr><th>Recommended scale</th><td>Up to 30 people working at the same time, 500 users and 3,000 tasks in one project (checked with 2 CPU cores and 2 GB of memory)</td></tr>
+      <tr><th>Browsers</th><td>The latest Chrome, Edge or Firefox (on a PC, a screen at least 1280px wide). Tablets can view and enter actuals</td></tr>
+      <tr><th>Network</th><td>No outbound connections. Screen components, fonts and the manual are included. Japanese holidays for 2025–2027 are preset</td></tr>
+      <tr><th>Language</th><td>Japanese, English (US) or English (UK), one for the whole system. Dates follow the language (Nov 5, 2026 / 5 Nov 2026)</td></tr>
+      <tr><th>Sign-in</th><td>ID and password (argon2). Locked for 15 minutes after 10 failures</td></tr>
+      <tr><th>Data and backup</th><td>Stored in a Docker volume. <code>taskflower backup</code> backs up while it is running</td></tr>
+      <tr><th>Licenses</th><td>Included open-source software is MIT, Apache-2.0 and similar</td></tr>
+    </table>
+      </div>
+</section>
+
+<section id="trial">
+  <div class="wrap">
+    <h2>First, check with the free trial that it works on your server</h2>
+    <table class="compare"><colgroup><col style="width:28%"><col style="width:36%"><col style="width:36%"></colgroup>
+      <tr><th></th><th>Free trial</th><th>Full version</th></tr>
+      <tr><th>Tasks</th><td>Up to 30 per project</td><td>Unlimited</td></tr>
+      <tr><th>Projects</th><td>Up to 3</td><td>Unlimited</td></tr>
+      <tr><th>Users and external people</th><td>Unlimited</td><td>Unlimited</td></tr>
+      <tr><th>REST API</th><td>×</td><td>○</td></tr>
+      <tr><th>GitLab integration</th><td>1 project, up to 30 updates</td><td>○</td></tr>
+    </table>
+    <p>The data you enter in the free trial can be used as is: just switch to the full version's image.</p>
+    <a class="btn primary" href="https://taskflowerwbs.gumroad.com">The free trial will be available after launch (get notified)</a>
+  </div>
+</section>
+
+<section id="price" class="alt">
+  <div class="wrap">
+    <h2>Price</h2>
+    <div class="card" style="max-width:520px">
+      <div class="price">Planned price ¥30,000</div>
+      <p class="note">Charged in US dollars. The amount on your card statement varies with the exchange rate.</p>
+      <div>One-time purchase · 1 server · unlimited users</div>
+      <p class="note">A product for use in the business of companies and sole proprietors.</p>
+      <p class="lead" style="font-size:15px">10 people using it for 3 years still pay ¥30,000. No extra charge when your team grows.<br>Bug-fix versions: for 1 year from the date of purchase</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>Frequently asked questions</h2>
+    <div class="grid g2">
+      <div class="card"><h3>Can it be used offline?</h3>Yes. It makes no outbound connections at all.</div>
+      <div class="card"><h3>Can anyone see our data?</h3>No. Your data stays only on your own server.</div>
+      <div class="card"><h3>Can we use it from outside the company?</h3>The product is designed for use inside the company. It does not restrict where connections come from, but use over the internet is not intended, and we cannot guarantee operation or security for it. If you use it from outside, consider and test it in your own environment, including security, before you introduce it (for example, through a VPN).</div>
+      <div class="card"><h3>Can you help us install it?</h3>We do not provide individual installation support. Please check with the free trial first.</div>
+      <div class="card"><h3>Can we get a refund?</h3>Refunds are not possible after purchase (except refunds and disputes under the payment provider's terms). Always check with the free trial before buying.</div>
+      <div class="card"><h3>What if the author disappears?</h3>When we stop selling or providing bug-fix versions, we will hand the source code over to purchasers.</div>
+      <div class="card"><h3>Is the Japanese text the official one?</h3>Yes. The terms and the license terms are written in Japanese, and the English versions are translations. If they differ, the Japanese version prevails.</div>
+    </div>
+    <p style="margin-top:16px"><a href="manual/Frequently%20asked%20questions.html">More questions (the “Frequently asked questions” page of the manual)</a></p>
+  </div>
+</section>
+
+<section id="agree" class="alt">
+  <div class="wrap">
+    <h2>Please check before you buy</h2>
+    <p>On the purchase screen, we ask you to agree to the following.</p>
+    <ul class="check">
+      <li>I have confirmed that my company has a person who can set up and operate a Docker environment.</li>
+      <li>I agree that individual support for installation, environment setup, network settings, etc. is not included, and that this software is provided as is.</li>
+      <li>I have used the free trial beforehand and confirmed that it works properly on my company's server environment.</li>
+      <li>I agree that, due to the nature of digital content, no refunds or returns are possible after payment is completed (except refunds and disputes under the payment provider's terms).</li>
+      <li>I am purchasing as a business (a company or a sole proprietor) for business use.</li>
+    </ul>
+    <p class="note">See the <a href="terms.html">terms and disclaimer</a> and the <a href="license.html">license terms</a> for details.</p>
+    <a class="btn primary disabled" href="#" aria-disabled="true">Buy the full version (preparing to start sales)</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="terms.html">Terms and disclaimer</a><a href="license.html">License terms</a><br>
+    © taskflower
+  </div>
+</footer>
+
+</body>
+</html>

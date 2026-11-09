@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>taskflower — 社内サーバーで動く、WBS とガントチャートが 1 画面の工程管理（買い切り）</title>
+<meta name="description" content="WBS とガントチャートを 1 画面で。Excel のように打てて、前の作業を延ばせば後ろの工程は自動でずれます。Docker Compose で社内サーバーに入れて、インターネットから切り離した社内 LAN でも動く、買い切りの工程管理ツールです。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="index.html">■ taskflower</a>
+    <nav><a href="#features">機能</a><a href="#spec">動作環境</a><a href="#price">価格</a><a href="#faq">よくある質問</a><a href="manual/index.html">マニュアル</a></nav>
+    <a class="lang" href="en/index.html" hreflang="en">English</a>
+    <a class="btn primary small" href="#trial">無料評価版</a>
+  </div>
+</header>
+<div class="prelaunch"><div class="wrap">taskflower は 2026 年 12 月〜2027 年 1 月に公開の予定です。このページは公開前のご案内で、今はまだご購入・ダウンロードはできません。<a href="https://taskflowerwbs.gumroad.com">公開のお知らせをメールで受け取る（Gumroad）</a></div></div>
+
+<section>
+  <div class="wrap hero">
+    <div>
+      <h1>WBS とガントチャートを 1 画面で。<br>Excel のように打てて、日程の変更は 1 か所だけ。</h1>
+      <p class="lead">WBS（作業を階層に分けた一覧表）と、日程を横棒で表すガントチャートが横に並び、前の作業を延ばせば、後ろの工程は自動でずれます。社内サーバーで動いて、買い切り 3 万円（予定）。<br><code>docker compose up -d</code> で起動。インターネットから切り離した社内 LAN でも、すべての機能が動きます。</p>
+      <div class="tags"><span>セルフホスト</span><span>オンプレミス</span><span>Docker Compose</span><span>完全オフライン</span><span>REST API</span><span>GitLab 連携</span></div>
+      <a class="btn primary" href="#trial">無料評価版について（公開後）</a>
+      <a class="btn" href="#spec">動作環境を見る</a>
+    </div>
+    <div>
+      <img class="shot" src="img/hero.png" width="1280" height="720" alt="taskflower の画面。左に WBS の表、右にガントチャート。ユニットバス組み立ての日数を 4 日に延ばし、確認で「動かす」を押した直後で、後ろの 6 件の作業が色付きで 2 日ずれている">
+      <p class="caption">「ユニットバス組み立て」を 2 日延ばした直後。動く 6 件を確かめて「動かす」を押すと、まとめてずれ、変わった行が色付きになります。</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>こんな工程管理をしていませんか</h2>
+    <div class="grid g2">
+      <div class="card">1 つの作業が遅れるたびに、後ろの日付を全部手で打ち直している</div>
+      <div class="card">誰がいつ直したか分からない Excel が、共有フォルダに何個もある</div>
+      <div class="card">クラウドのツールは、社外のサーバーに図面や顧客名を置けないので使えない</div>
+      <div class="card">無料の OSS は設定が多く、現場の人が使ってくれなかった</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>ちょうどいい工程表が、なかったので作りました。</h2>
+    <p class="lead">工程表のツールを探すと、高いものは機能が多すぎて月額もかさみ、手頃なものは WBS とガントチャートが別の画面だったり、Web の入力画面で 1 件ずつ打つのが面倒だったりしました。Excel は打ちやすいけれど、1 つの作業が遅れるたびに後ろの日付を全部打ち直すことになります。現場や案件が変わるたびに、いつもの段取りを 1 から打つのも手間でした。</p>
+    <div class="grid g5">
+      <div class="card"><h3>WBS とガントチャートが 1 画面</h3>表とガントチャートが横に並び、同じ行がそろって動きます。</div>
+      <div class="card"><h3>Excel のように打てる</h3>矢印キーと Tab でセルを動いて、そのまま入力。マウスに持ち替えずに続けて打てます。</div>
+      <div class="card"><h3>日程の変更が楽</h3>前の作業を延ばせば、後ろの工程は自動でずれます。</div>
+      <div class="card"><h3>いつもの段取りはテンプレートに</h3>「浴室リフォーム一式」「月次決算」のような決まった作業の並びを登録しておけば、開始日を選ぶだけでまとめて追加。日付は休みに合わせて計算されます。</div>
+      <div class="card"><h3>社内サーバーで完結</h3>お客様の名前や現場の住所が並ぶ工程表も、クラウドに出さずに管理。社内サーバーで動き、外部とは一切通信しません。</div>
+    </div>
+    <p class="lead">それがなかったので、作りました。高すぎず、足りなくもない、買い切りの工程表です。</p>
+  </div>
+</section>
+
+<section id="features" class="alt">
+  <div class="wrap">
+    <h2>taskflower でできること</h2>
+    <div class="grid g3">
+      <div class="card"><h3>Excel と同じ手つきで入力</h3>矢印キーで動いてそのまま打つ。Enter で確定、Ctrl+Enter で行を追加、Alt+Shift+→ で字下げ。Excel から複数行を貼り付けると、先頭の空白から階層もそのまま取り込みます。</div>
+      <div class="card"><h3>遅れが後ろに自動で伝わる</h3>前の作業の予定を延ばすと、つながっている作業がすべて同じ稼働日数だけずれます。土日・祝日・会社の休みは飛ばして数えます。動かす前に、動く作業と日付を一覧で確かめられます。</div>
+      <div class="card">
+        <svg class="arch" width="220" height="90" viewBox="0 0 220 90" role="img" aria-label="社内 LAN の中のサーバーで、コンテナ 1 つが動く構成">
+          <rect x="1" y="1" width="218" height="88" rx="8" fill="#f5f7fa" stroke="#cbd2d9" stroke-dasharray="4 3"/>
+          <text x="10" y="18" font-size="11" fill="#616e7c">社内 LAN</text>
+          <rect x="20" y="30" width="80" height="44" rx="6" fill="#fff" stroke="#2563eb"/>
+          <text x="60" y="49" font-size="11" text-anchor="middle" fill="#1f2933">taskflower</text>
+          <text x="60" y="64" font-size="10" text-anchor="middle" fill="#616e7c">コンテナ 1 つ</text>
+          <rect x="140" y="38" width="60" height="28" rx="6" fill="#fff" stroke="#cbd2d9"/>
+          <text x="170" y="56" font-size="11" text-anchor="middle" fill="#1f2933">ブラウザ</text>
+          <line x1="100" y1="52" x2="140" y2="52" stroke="#616e7c"/>
+        </svg>
+        <h3>社内サーバーで完結</h3>コンテナ 1 つで動き、外部とは一切通信しません。ライセンスの確認も、利用状況の送信もありません。
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>動いているところ</h2>
+    <img class="shot" src="img/cascade.gif" width="1280" height="720" loading="lazy" alt="作業の日数を 2 日から 4 日に変えて Enter を押すと、動く 6 件の作業と変更後の日付の一覧が出て、もう一度 Enter（動かす）を押すと、後ろの作業がまとめて 2 日ずれ、ガントチャートのバーが動く様子">
+    <p class="caption">日数を 2 → 4 に変えて Enter。動く 6 件と日付を確かめて、もう一度 Enter（動かす）で、まとめてずれます。Ctrl+Z で戻せます。</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>さまざまな業種の現場で</h2>
+    <div class="grid g4">
+      <div class="card"><h3>建築・リフォーム</h3>現場ごとの工程を管理。自社で進捗を管理しない協力会社や職人さんの予定も、外部担当者として同じガントチャートに載せて、工程の全体を分かりやすくできます。実績はタブレットからも入力できます。</div>
+      <div class="card"><h3>営業・商品企画</h3>展示会や発売日を節目にして、逆算した準備を管理。毎回の段取りはテンプレートに。</div>
+      <div class="card"><h3>バックオフィス</h3>決算・年末調整などの毎年の段取りをテンプレートにして、遅れている作業を一覧。</div>
+      <div class="card"><h3>システム開発</h3>GitLab の Issue が閉じたら作業を完了に。REST API で AI ツールから進捗を書き込み。</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>機能</h2>
+    <div class="grid g2">
+      <div class="card"><h3>できること</h3>WBS（8 階層）とガントチャートの連動 / 先行作業と後続の自動移動 / 予定と実績・進捗・節目 / マイ作業・タブレット表示 / 進捗の評価（EVM）・担当者ごとの工数 / テンプレート・CSV・Excel 貼り付け / 元に戻す（100 段） / 4 つの役割と外部担当者 / GitLab 連携・REST API / 日本の祝日（2025〜2027 年を登録済み。以降はシステム管理者が登録）/ ファイルの添付 / 日本語・英語の画面</div>
+      <div class="card"><h3>できないこと</h3>SSO・Active Directory / メールのお知らせ / スマートフォン / 業種専用の帳票 / つながりの種類（「開始と開始」など）の選択 / インターネット上での利用（社内での利用を想定。保証の対象外）<br><span class="note">詳しくはマニュアルの<a href="manual/できないこと.html">「できないこと」</a>のページ。</span></div>
+    </div>
+    <p style="margin-top:16px"><a class="btn" href="manual/index.html">機能マニュアルを読む</a><span class="note">製品に同梱のマニュアルと同じ内容です。マニュアルにない機能は、taskflower にはありません。</span></p>
+  </div>
+</section>
+
+<section id="spec" class="alt">
+  <div class="wrap">
+    <h2>動作環境と技術仕様（社内のシステム担当の方へ）</h2>
+    <table>
+      <tr><th style="width:22%">構成</th><td>Docker のコンテナ 1 つ。DB は SQLite（既定）・PostgreSQL・MySQL</td></tr>
+      <tr><th>導入</th><td>サーバーの CPU（amd64 / arm64）に合う Zip を展開 → <code>docker load -i image.tar.gz</code> → <code>cp .env.example .env</code> → <code>docker compose up -d</code></td></tr>
+      <tr><th>動作環境</th><td>Linux / Windows（WSL2 + Docker Desktop）/ macOS。amd64・arm64。Docker Engine 24 以降・Docker Compose v2.24 以降</td></tr>
+      <tr><th>推奨の規模</th><td>同時に操作する人 30 人・ユーザー 500 人・1 つのプロジェクトの作業 3,000 件まで（CPU 2 コア・メモリ 2 GB で確認）</td></tr>
+      <tr><th>ブラウザ</th><td>Chrome・Edge・Firefox の最新版（PC は画面の幅 1280px 以上）。タブレットは参照と実績の入力</td></tr>
+      <tr><th>ネットワーク</th><td>外部への通信なし。画面の部品・フォント・マニュアルも同梱。日本の祝日は 2025〜2027 年を最初から登録</td></tr>
+      <tr><th>言語</th><td>日本語・English (US)・English (UK) から、システムで 1 つ選びます。日付の形も言語に合わせます</td></tr>
+      <tr><th>認証</th><td>ID とパスワード（argon2）。10 回失敗で 15 分ロック</td></tr>
+      <tr><th>データ・バックアップ</th><td>Docker ボリュームに保存。<code>taskflower backup</code> で動かしたままバックアップ</td></tr>
+      <tr><th>ライセンス</th><td>同梱のオープンソースは MIT・Apache-2.0 など</td></tr>
+    </table>
+      </div>
+</section>
+
+<section id="trial">
+  <div class="wrap">
+    <h2>まず無料評価版で、自社のサーバーで動くことを確かめてください</h2>
+    <table class="compare"><colgroup><col style="width:28%"><col style="width:36%"><col style="width:36%"></colgroup>
+      <tr><th></th><th>無料評価版</th><th>製品版</th></tr>
+      <tr><th>作業の数</th><td>1 プロジェクト 30 件まで</td><td>無制限</td></tr>
+      <tr><th>プロジェクトの数</th><td>3 つまで</td><td>無制限</td></tr>
+      <tr><th>ユーザー・外部担当者</th><td>無制限</td><td>無制限</td></tr>
+      <tr><th>REST API</th><td>×</td><td>○</td></tr>
+      <tr><th>GitLab 連携</th><td>1 プロジェクト・30 回まで</td><td>○</td></tr>
+    </table>
+    <p>無料評価版で入力したデータは、製品版のイメージに入れ替えるだけでそのまま使えます。</p>
+    <a class="btn primary" href="https://taskflowerwbs.gumroad.com">無料評価版は公開後にダウンロードできます（お知らせを受け取る）</a>
+  </div>
+</section>
+
+<section id="price" class="alt">
+  <div class="wrap">
+    <h2>価格</h2>
+    <div class="card" style="max-width:520px">
+      <div class="price">予定価格 30,000 円</div>
+      <p class="note">決済は米ドル換算。カードの請求額は為替で前後します。</p>
+      <div>買い切り・1 サーバー・ユーザー数無制限</div>
+      <p class="note">法人・個人事業主の業務で使用するための製品です。</p>
+      <p class="lead" style="font-size:15px">10 人で 3 年使っても 30,000 円。人数が増えても追加料金はありません。<br>不具合の修正版の提供: 購入日から 1 年間</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>よくある質問</h2>
+    <div class="grid g2">
+      <div class="card"><h3>オフラインで使えますか？</h3>使えます。外部への通信は一切ありません。</div>
+      <div class="card"><h3>データを見られることは？</h3>ありません。データは自社のサーバーの中だけにあります。</div>
+      <div class="card"><h3>社外から使えますか？</h3>社内での利用を想定した製品です。接続元を製品で制限してはいませんが、インターネット上での利用は想定しておらず、動作確認やセキュリティに関する保証はできません。社外から使う場合は、セキュリティを含めて、お客様の環境で検討・検証のうえ導入してください（VPN の利用など）。</div>
+      <div class="card"><h3>導入を手伝ってもらえますか？</h3>個別の導入支援は行っていません。まず無料評価版で確かめてください。</div>
+      <div class="card"><h3>返金できますか？</h3>購入後の返金はできません（決済事業者の規約による返金・申し立てを除く）。必ず無料評価版で確かめてからご購入ください。</div>
+      <div class="card"><h3>作者がいなくなったら？</h3>販売・修正版の提供を終えるときは、購入者にソースコードをお渡しします。</div>
+    </div>
+    <p style="margin-top:16px"><a href="manual/よくある質問.html">そのほかの質問（マニュアルの「よくある質問」）</a></p>
+  </div>
+</section>
+
+<section id="agree" class="alt">
+  <div class="wrap">
+    <h2>購入の前にご確認ください</h2>
+    <p>ご購入の画面で、次の内容への同意をお願いしています。</p>
+    <ul class="check">
+      <li>自社に Docker 環境の構築・運用ができるエンジニアがいることを確認しました。</li>
+      <li>各社の環境構築・ネットワーク設定などへの個別サポートは含まれない（現状有姿での提供）ことに同意します。</li>
+      <li>事前に無料評価版で、自社サーバーでの正常な動作を確認しました。</li>
+      <li>デジタルコンテンツの性質上、決済完了後の返金・返品はできないことに同意します（決済事業者の規約による返金・申し立てを除く）。</li>
+      <li>事業者（法人・個人事業主）として、業務のために購入します。</li>
+    </ul>
+    <p class="note">詳しくは<a href="terms.html">利用規約・免責事項</a>と<a href="license.html">使用許諾条件</a>をご覧ください。</p>
+    <a class="btn primary disabled" href="#" aria-disabled="true">製品版を購入する（販売開始の準備中）</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="terms.html">利用規約・免責事項</a><a href="license.html">使用許諾条件</a><br>
+    © taskflower
+  </div>
+</footer>
+
+</body>
+</html>
