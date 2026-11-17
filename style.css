@@ -59,6 +59,7 @@ footer a { color: var(--muted); margin-right: 14px; }
 .toc li.cur a { font-weight: 700; color: var(--ink); text-decoration: none; }
 .search { width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; font-size: 14px; }
 .alias { font-size: 13px; color: var(--muted); }
+.found { font-size: 12px; color: var(--muted); }
 article { min-width: 0; }
 
 @media (max-width: 760px) {
