@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>taskflower — WBS and Gantt chart on one screen, on your own server (one-time purchase)</title>
+<title>Sakimiterra — WBS and Gantt chart on one screen, on your own server (one-time purchase)</title>
 <meta name="description" content="WBS and Gantt chart on one screen. Type like in Excel, and when you extend a task, the tasks after it move automatically. A one-time-purchase scheduling tool you run on your company server with Docker Compose. Every feature works on an internal network cut off from the internet.">
 <link rel="stylesheet" href="../style.css">
 <link rel="alternate" hreflang="ja" href="../index.html">
@@ -12,13 +12,13 @@
 
 <header>
   <div class="wrap">
-    <a class="brand" href="index.html">■ taskflower</a>
+    <a class="brand" href="index.html">■ Sakimiterra</a>
     <nav><a href="#features">Features</a><a href="#spec">Requirements</a><a href="#price">Price</a><a href="#faq">FAQ</a><a href="manual/index.html">Manual</a></nav>
     <a class="lang" href="../index.html" hreflang="ja">日本語</a>
     <a class="btn primary small" href="#trial">Free trial</a>
   </div>
 </header>
-<div class="prelaunch"><div class="wrap">taskflower is scheduled to launch between December 2026 and January 2027. This page is a preview; purchase and download are not available yet. <a href="https://taskflowerwbs.gumroad.com">Get the launch announcement by email (Gumroad)</a></div></div>
+<div class="prelaunch"><div class="wrap">sakimiterra is scheduled to launch between December 2026 and January 2027. This page is a preview; purchase and download are not available yet. <a href="https://sakimiterra.gumroad.com">Get the launch announcement by email (Gumroad)</a></div></div>
 
 <section>
   <div class="wrap hero">
@@ -30,7 +30,7 @@
       <a class="btn" href="#spec">See the requirements</a>
     </div>
     <div>
-      <img class="shot" src="../img/hero.en.png" width="1280" height="720" alt="The taskflower screen. The WBS table is on the left and the Gantt chart on the right. Right after extending “Assemble the unit bath” to 4 days and pressing “Move” in the confirmation: the 6 tasks after it have moved 2 days later and are highlighted">
+      <img class="shot" src="../img/hero.en.png" width="1280" height="720" alt="The Sakimiterra screen. The WBS table is on the left and the Gantt chart on the right. Right after extending “Assemble the unit bath” to 4 days and pressing “Move” in the confirmation: the 6 tasks after it have moved 2 days later and are highlighted">
       <p class="caption">Right after extending “Assemble the unit bath” by 2 days. Check the 6 tasks that will move and press “Move”: they move together, and the changed rows are highlighted.</p>
     </div>
   </div>
@@ -65,7 +65,7 @@
 
 <section id="features" class="alt">
   <div class="wrap">
-    <h2>What taskflower does</h2>
+    <h2>What Sakimiterra does</h2>
     <div class="grid g3">
       <div class="card"><h3>Enter data the way you do in Excel</h3>Move with the arrow keys and type. Enter to confirm, Ctrl+Enter to add a row, Alt+Shift+→ to indent. Paste several rows from Excel, and the levels come in from the leading spaces.</div>
       <div class="card"><h3>Delays carry forward automatically</h3>Extend the plan of a task, and all the linked tasks after it move by the same number of working days. Weekends, holidays and company days off are skipped. Before they move, you can check the tasks and their new dates in a list.</div>
@@ -74,7 +74,7 @@
           <rect x="1" y="1" width="218" height="88" rx="8" fill="#f5f7fa" stroke="#cbd2d9" stroke-dasharray="4 3"/>
           <text x="10" y="18" font-size="11" fill="#616e7c">Internal network</text>
           <rect x="20" y="30" width="80" height="44" rx="6" fill="#fff" stroke="#2563eb"/>
-          <text x="60" y="49" font-size="11" text-anchor="middle" fill="#1f2933">taskflower</text>
+          <text x="60" y="49" font-size="11" text-anchor="middle" fill="#1f2933">Sakimiterra</text>
           <text x="60" y="64" font-size="10" text-anchor="middle" fill="#616e7c">1 container</text>
           <rect x="140" y="38" width="60" height="28" rx="6" fill="#fff" stroke="#cbd2d9"/>
           <text x="170" y="56" font-size="11" text-anchor="middle" fill="#1f2933">Browser</text>
@@ -113,7 +113,7 @@
       <div class="card"><h3>What it can do</h3>Linked WBS (8 levels) and Gantt chart / Automatic moves of successors / Plans and actuals, progress, milestones / My tasks and a tablet view / Earned value (EVM) and workload by assignee / Templates, CSV, pasting from Excel / Undo (100 steps) / 4 roles and external people / GitLab integration and REST API / Holidays (Japanese holidays for 2025–2027 are preset; the system administrator registers your own) / File attachments / Japanese and English screens</div>
       <div class="card"><h3>What it cannot do</h3>SSO and Active Directory / Email notifications / Smartphones / Industry-specific report forms / Choosing a kind of link (such as “start-to-start”) / Use over the internet (designed for use inside the company; not covered by any guarantee)<br><span class="note">See the <a href="manual/What%20it%20cannot%20do.html">“What it cannot do”</a> page of the manual for details.</span></div>
     </div>
-    <p style="margin-top:16px"><a class="btn" href="manual/index.html">Read the manual</a><span class="note">The same content as the manual included in the product. Features not in the manual do not exist in taskflower.</span></p>
+    <p style="margin-top:16px"><a class="btn" href="manual/index.html">Read the manual</a><span class="note">The same content as the manual included in the product. Features not in the manual do not exist in Sakimiterra.</span></p>
   </div>
 </section>
 
@@ -129,7 +129,7 @@
       <tr><th>Network</th><td>No outbound connections. Screen components, fonts and the manual are included. Japanese holidays for 2025–2027 are preset</td></tr>
       <tr><th>Language</th><td>Japanese, English (US) or English (UK), one for the whole system. Dates follow the language (Nov 5, 2026 / 5 Nov 2026)</td></tr>
       <tr><th>Sign-in</th><td>ID and password (argon2). Locked for 15 minutes after 10 failures</td></tr>
-      <tr><th>Data and backup</th><td>Stored in a Docker volume. <code>taskflower backup</code> backs up while it is running</td></tr>
+      <tr><th>Data and backup</th><td>Stored in a Docker volume. <code>sakimiterra backup</code> backs up while it is running</td></tr>
       <tr><th>Licenses</th><td>Included open-source software is MIT, Apache-2.0 and similar</td></tr>
     </table>
       </div>
@@ -147,7 +147,7 @@
       <tr><th>GitLab integration</th><td>1 project, up to 30 updates</td><td>○</td></tr>
     </table>
     <p>The data you enter in the free trial can be used as is: just switch to the full version's image.</p>
-    <a class="btn primary" href="https://taskflowerwbs.gumroad.com">The free trial will be available after launch (get notified)</a>
+    <a class="btn primary" href="https://sakimiterra.gumroad.com">The free trial will be available after launch (get notified)</a>
   </div>
 </section>
 
@@ -199,7 +199,7 @@
 <footer>
   <div class="wrap">
     <a href="terms.html">Terms and disclaimer</a><a href="license.html">License terms</a><br>
-    © taskflower
+    © Sakimiterra
   </div>
 </footer>
 
